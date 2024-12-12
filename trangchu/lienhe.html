@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ</title>
+  <link rel="stylesheet" href="/type.css/type.css">
+</head>
+<body>
+    <header>
+        <img src="/image/logo1.jpg" alt="Logo">
+        <h1>Web xem phim</h1>
+    </header>
+    <nav>
+            <a href="/trangchu/test.html">Trang chủ</a>
+            <a href="/trangchu/dsphim.html">Phân loại phim</a>
+            <a href="/trangchu/phim.html">Phim</a>
+            <a href="/trangchu/taikhoan.html">Tài khoản</a>
+            <a href="/trangchu/lienhe.html">Liên hệ</a>
+    </nav>
+  <div class="container1">
+    <h1>Liên Hệ Với Chúng Tôi</h1>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Tên của bạn" required>
+      <input type="email" id="email" placeholder="Email của bạn" required>
+      <input type="tel" id="phone" placeholder="Số điện thoại" required>
+      <textarea id="message" placeholder="Nội dung liên hệ" rows="5" required></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+
+    <div class="info">
+      <p>Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất!</p>
+      <p>Hoặc bạn có thể liên hệ trực tiếp qua:</p>
+      <p>Điện thoại: (123) 456-7890</p>
+      <p>Email: contact@yourwebsite.com</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const message = document.getElementById("message").value;
+
+      // Hiển thị thông tin liên hệ đã nhập
+      alert("Cảm ơn " + name + ", chúng tôi đã nhận được yêu cầu của bạn. Chúng tôi sẽ liên hệ lại qua email " + email + " trong thời gian sớm nhất.");
+
+      // Thực hiện gửi yêu cầu đến server (nếu có)
+      // Dưới đây là nơi bạn có thể gửi dữ liệu tới server nếu cần.
+
+      // Reset form sau khi gửi
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+</body>
+</html>

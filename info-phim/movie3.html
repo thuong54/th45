@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Hành Động</title>
+    <link rel="stylesheet" href="/type.css/type.css">
+</head>
+<body>
+    <header>
+        <img src="/image/logo1.jpg" alt="Logo">
+        <h1>Phim Hành Động</h1>
+    </header>
+    <nav>
+            <a href="/trangchu/test.html">Trang chủ</a>
+            <a href="/trangchu/dsphim.html">Phân loại phim</a>
+            <a href="/trangchu/phim.html">Phim</a>
+            <a href="/trangchu/taikhoan.html">Tài khoản</a>
+            <a href="/trangchu/lienhe.html">Liên hệ</a>
+    </nav>
+
+    <div class="movie-detail">
+        <img src="/image/s3" alt="Movie 3">
+        <h3>Phim Hành Động</h3>
+        <p>Mô tả: Đây là bộ phim hành động cực kỳ hấp dẫn với nhiều pha gay cấn.</p>
+        <p>Thời gian: 120 phút</p>
+        <p>Thể loại: Hành Động</p>
+        <button onclick="showVideo()">Xem luôn bộ phim</button>
+
+        <!-- Phần hiển thị video -->
+        <div class="movie-video" id="movie-video">
+            <video controls width="100%"  >
+                <source src="/video/Godzilla x Kong- The New Empire - Official Trailer 2.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ phát video.
+            </video>
+        </div>
+    </div>
+   
+    <script>
+        function showVideo() {
+            const videoSection = document.getElementById('movie-video');
+            if (videoSection.style.display === 'none' || videoSection.style.display === '') {
+                videoSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

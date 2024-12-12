@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách phim</title>
+    <link rel="stylesheet" href="/type.css/type.css">
+</head>
+<body>
+    <header>
+        <img src="/image/logo1.jpg" alt="Logo"> <!-- Thêm logo vào đây -->
+        <h1>Trang Chủ - Website Xem Phim</h1>
+    </header>
+    <nav>
+            <a href="/trangchu/test.html">Trang chủ</a>
+            <a href="/trangchu/dsphim.html">Phân loại phim</a>
+            <a href="/trangchu/phim.html">Phim</a>
+            <a href="/trangchu/taikhoan.html">Tài khoản</a>
+            <a href="/trangchu/lienhe.html">Liên hệ</a>
+    </nav>
+  <div class="container">
+    <h1>Danh sách phim</h1>
+    <!-- Bộ lọc -->
+    <div class="filters">
+      <div>
+        <label for="genre">Thể loại:</label>
+        <select id="genre">
+          <option value="all">Tất cả</option>
+          <option value="action">Hành động</option>
+          <option value="comedy">Hài</option>
+          <option value="sci-fi">Khoa học viễn tưởng</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="year">Năm phát hành:</label>
+        <select id="year">
+          <option value="all">Tất cả</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Danh sách phim -->
+    <div class="movie-thumbnails" id="movieList">
+      <!-- Các bộ phim sẽ được thêm vào đây -->
+      <div class="movie-item" data-genre="action" data-year="2024">
+        <a href="/info-phim/movie1.html">
+        <img src="/image/s1" alt="movie1">
+        <h3>Phim Hành Động 1</h3>
+        <p>Thể loại: Hành động</p>
+        <p>Năm phát hành: 2024</p>
+        </a>
+      </div>
+      <div class="movie-item" data-genre="comedy" data-year="2023">
+        <a href="/info-phim/movie4.html">
+        <img src="/image/s4.jpg" alt="Phim 2">
+        <h3>Phim Hài 2</h3>
+        <p>Thể loại: Hài</p>
+        <p>Năm phát hành: 2023</p>
+        </a>
+      </div>
+      <div class="movie-item" data-genre="sci-fi" data-year="2022">
+        <a href="/info-phim/movie2.html">
+        <img src="/image/s2.webp" alt="Phim 3">
+        <h3>Phim Khoa Học Viễn Tưởng 3</h3>
+        <p>Thể loại: Khoa học viễn tưởng</p>
+        <p>Năm phát hành: 2022</p>
+        </a>
+      </div>
+      <div class="movie-item" data-genre="action" data-year="2023">
+        <a href="/info-phim/movie3.html">
+        <img src="/image/s3" alt="Phim 4">
+        <h3>Phim Hành Động 4</h3>
+        <p>Thể loại: Hành động</p>
+        <p>Năm phát hành: 2023</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Phân trang -->
+    <div class="pagination">
+      <button>Trang trước</button>
+      <button>Trang sau</button>
+    </div>
+  </div>
+
+  <script>
+    // Lọc phim theo thể loại và năm phát hành
+    document.getElementById("genre").addEventListener("change", filterMovies);
+    document.getElementById("year").addEventListener("change", filterMovies);
+
+    function filterMovies() {
+      const genreFilter = document.getElementById("genre").value;
+      const yearFilter = document.getElementById("year").value;
+
+      const movies = document.querySelectorAll(".movie-item");
+
+      movies.forEach(movie => {
+        const genre = movie.getAttribute("data-genre");
+        const year = movie.getAttribute("data-year");
+
+        // Kiểm tra thể loại và năm phát hành
+        const genreMatch = (genreFilter === "all" || genre === genreFilter);
+        const yearMatch = (yearFilter === "all" || year === yearFilter);
+
+        if (genreMatch && yearMatch) {
+          movie.style.display = "block";
+        } else {
+          movie.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
